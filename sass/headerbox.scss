@@ -1,0 +1,102 @@
+.header-box {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+
+  .form-box {
+    display: flex;
+    align-items: center;
+    flex: 0 0 50%;
+    border-radius: 16rem;
+    justify-content: center;
+
+    @media screen and (max-width: 1300px) {
+      flex: 0 0 80%;
+    }
+
+    @media screen and (max-width: 950px) {
+      flex: 0 0 100%;
+    }
+
+    @media screen and (max-width: 600px) {
+      flex: 0 0 100%;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      flex: 0 0 70%;
+      border-radius: 16rem;
+      justify-content: center;
+      @media screen and (max-width: 600px) {
+        flex: 0 0 90%;
+      }
+
+      input {
+        border-style: none;
+        width: 90%;
+        padding: 1.5rem 4rem;
+        margin-right: -3rem;
+        border-radius: 100px;
+        transition: all 0.3s;
+        color: #dee2e6;
+        background-color: #297fb9d1;
+        font-size: 1.4rem;
+
+        &:focus {
+          outline: none;
+        }
+        &:active {
+          transform: scale(1.1);
+        }
+        &::-webkit-input-placeholder {
+          color: rgb(222, 217, 217);
+          font-size: 1.6rem;
+          margin-left: 0.8rem;
+        }
+      }
+
+      .next-click {
+        padding: 0.7rem;
+        border-radius: 50%;
+        margin-left: -1.3rem;
+        background-color: #042c52;
+        cursor: pointer;
+        z-index: 10;
+        font-size: 2.4rem;
+        color: #fff;
+
+        &:active,
+        &:focus {
+          transform: scale(1.2);
+        }
+        &:hover {
+          background-color: #940808;
+        }
+      }
+    }
+
+    .bookmark {
+      margin-left: 2.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #297fb9c2;
+      padding: 0.8rem;
+      border-radius: 8rem;
+      cursor: pointer;
+      z-index: 20;
+
+      &:active {
+        transform: scale(1.2);
+      }
+
+      .bookmarked {
+        font-size: 2.4rem;
+        color: rgba(255, 255, 255, 0.884);
+      }
+    }
+  }
+}

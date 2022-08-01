@@ -1,0 +1,172 @@
+.favourite-box {
+  margin-top: 1.6rem;
+  grid-column: 7 / 9;
+  grid-row: 2/-1;
+  background-color: #2ba1d7bd;
+  border-left: 0.48rem solid #062c50;
+  visibility: hidden;
+
+  @media screen and (max-width: 950px) {
+    grid-column: 6 / -1;
+  }
+  @media screen and (max-width: 660px) {
+    grid-column: 5 / -1;
+  }
+  @media screen and (max-width: 500px) {
+    grid-column: 1 / -1;
+  }
+  .close-button {
+    z-index: 20 !important;
+    justify-self: flex-start;
+    align-self: flex-start;
+    color: #fff;
+    font-size: 3.52rem;
+    padding: 0.8rem;
+    margin: 0.8rem;
+
+    &:active {
+      transform: scale(1.2);
+    }
+  }
+
+  p {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.5rem;
+    font-family: "Quicksand", sans-serif;
+    text-align: center;
+  }
+
+  .bookmark-container {
+    height: 80vh;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      width: 5px;
+      background-color: #dadada;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #1e90ff;
+      border-radius: 100px;
+    }
+    .bookmarked-single-box {
+      cursor: pointer;
+      margin-top: 1.5rem;
+      height: auto;
+      background-color: #062c50;
+      padding: 1.6rem;
+      display: grid;
+      width: 90%;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.92rem;
+      border-radius: 3.2rem;
+
+      .book-weather-box {
+        grid-column: 1/2;
+        display: flex;
+        flex-direction: column;
+
+        h4 {
+          font-size: 1.6rem;
+          font-family: "Quicksand", sans-serif;
+          text-transform: uppercase;
+          font-weight: 600;
+          line-height: 1.6rem;
+          letter-spacing: 0.16rem;
+          display: inline-block;
+          -webkit-background-clip: text;
+          background-image: linear-gradient(
+            to right,
+            #b4f5ff,
+            #f1f1f1,
+            #60eaff
+          );
+          background-clip: text;
+          color: transparent;
+          //animation: moveUp 2s;
+          backface-visibility: hidden;
+        }
+        h3 {
+          margin-top: 0.32rem;
+          margin-bottom: 0.16rem;
+          font-size: 1.6rem;
+          font-family: "Roboto", sans-serif;
+          font-weight: 400;
+        }
+        p {
+          align-self: flex-start;
+          font-size: 1.44rem;
+          font-family: "Roboto", sans-serif;
+          color: #dee2e6;
+        }
+      }
+
+      .book-weather-icon {
+        grid-column: 2/3;
+        justify-self: center;
+        i {
+          font-family: "Cormorant Garamond", serif;
+          font-size: 4.8rem;
+          display: inline-block;
+          -webkit-background-clip: text;
+          background-image: linear-gradient(
+            to right,
+            #b4f5ff,
+            #f1f1f1,
+            #60eaff
+          );
+          background-clip: text;
+          color: transparent;
+          //animation: moveUp 2s;
+          backface-visibility: hidden;
+        }
+      }
+
+      .unbookmark {
+        grid-column: 3/4;
+        justify-self: end;
+        .unbookmark-icon {
+          color: #f1f1f1;
+          font-size: 3.2rem;
+          align-self: flex-start;
+          margin-left: 3.2rem;
+          cursor: pointer;
+        }
+      }
+
+      .book-weather-status {
+        grid-row: 2/3;
+        grid-column: 1/-1;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 0.48rem;
+
+        * {
+          font-size: 1.28rem;
+          text-transform: capitalize;
+          color: #dee2e6;
+          i {
+            margin-right: 0.16rem;
+            display: inline-block;
+            -webkit-background-clip: text;
+            background-image: linear-gradient(
+              to right,
+              #b4f5ff,
+              #f1f1f1,
+              #60eaff
+            );
+            background-clip: text;
+            color: transparent;
+          }
+        }
+      }
+    }
+  }
+}

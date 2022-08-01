@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <script type="module" src="js/controller.js"></script>
+  </head>
+  <body class="box-container">
+    <div class="gyro"></div>
+    <header class="header-box">
+      <form action="" class="form-box">
+        <div class="search-box">
+          <input
+            class="input"
+            type="search"
+            name=""
+            id=""
+            placeholder="Search for a city"
+          />
+          <ion-icon class="next-click" name="arrow-forward-outline"></ion-icon>
+          <div class="bookmark-click bookmark">
+            <ion-icon
+              class="bookmark-click bookmarked"
+              name="bookmarks"
+            ></ion-icon>
+          </div>
+        </div>
+      </form>
+    </header>
+    <p class="error-display">user denied location</p>
+    <main class="main-box">
+      <!--
+      <div class="weather-box">
+        <div class="location-weather">
+          <div class="city-name">
+            <div class="name-box">
+              <ion-icon name="location-outline"></ion-icon>Los Angeles
+            </div>
+            <ion-icon class="add-bookmark" name="bookmark-outline"></ion-icon>
+          </div>
+          <div class="weather-degree">
+            <img
+              src="//cdn.weatherapi.com/weather/64x64/night/386.png"
+              alt=""
+            />28°C
+          </div>
+          <div class="weather-status">sunny</div>
+          <div class="date-fig">
+            2022-06-10 11:14 <span class="date-status">am</span>
+          </div>
+        </div>
+
+        <div class="weather-favorite">
+          <ion-icon class="add-bookmark" name="bookmark-outline"></ion-icon>
+          <div class="humidity">
+            <i class="weather-icons ph-drop-half-bottom"
+              ><span class="icon-gap">Humidity</span></i
+            >
+            <span class="weather-digit humidity-percentage">50%</span>
+          </div>
+
+          <div class="wind-speed">
+            <i class="weather-icons ph-wind"
+              ><span class="icon-gap">wind speed</span></i
+            ><span class="weather-digit wind-speed-percentage">1.4km/h</span>
+          </div>
+          <div class="rain-chance">
+            <i class="weather-icons ph-cloud-rain"
+              ><span class="icon-gap">chances of rain</span></i
+            >
+            <span class="weather-digit rain-percentage">1%</span>
+          </div>
+        </div>
+      </div>
+      <div class="city-info-box">
+        <div class="image"></div>
+        <div class="country-info">
+          <div><span class="info-title"></span>United States</div>
+          <div><span class="info-title">💰 </span>USD $</div>
+          <div><span class="info-title"> 🗣</span>English</div>
+          <div><span class="info-title">👫</span> 13.4m people</div>
+        </div>
+      </div>
+
+      <div class="forecast">
+          <div class="forecast-single-con">
+            <p class="time">2pm</p>
+            <img src="//cdn.weatherapi.com/weather/64x64/night/386.png" alt=""/>
+            <p class="deg">29 <span>℃</span></p>
+          </div>
+        </div>
+      </div>-->
+    </main>
+
+    <nav class="favourite-box">
+      <ion-icon class="close-button" name="close"></ion-icon>
+      <p class="bookmark-error">No bookmark yet!</p>
+      <div class="bookmark-container">
+        <!-- 
+        <div class="bookmarked-single-box">
+          <div class="book-weather-box">
+            <h4>Nairobi</h4>
+            <h3>10°C</h3>
+            <p>Rainy</p>
+          </div>
+          <div class="book-weather-icon">
+            <i class="ph-cloud-rain"></i>
+          </div>
+          <div class="book-weather-status">
+            <p class="book-humidity"><i class="ph-drop-half-bottom"></i>17%</p>
+            <p class="book-wind-speed">
+              <i class="weather-icons ph-wind"></i>2.1Km/h
+            </p>
+            <p class="book-rain-chance">
+              <i class="weather-icons ph-cloud-rain"></i>35%
+            </p>
+          </div>
+        </div>
+        <div class="bookmarked-single-box">
+          <div class="book-weather-box">
+            <h4>Nairobi</h4>
+            <h3>10°C</h3>
+            <p>Rainy</p>
+          </div>
+          <div class="book-weather-icon">
+            <i class="ph-cloud-rain"></i>
+          </div>
+          <div class="book-weather-status">
+            <p class="book-humidity"><i class="ph-drop-half-bottom"></i>17%</p>
+            <p class="book-wind-speed">
+              <i class="weather-icons ph-wind"></i>2.1Km/h
+            </p>
+            <p class="book-rain-chance">
+              <i class="weather-icons ph-cloud-rain"></i>35%
+            </p>
+          </div>
+        </div>
+        <div class="bookmarked-single-box">
+          <div class="book-weather-box">
+            <h4>Nairobi</h4>
+            <h3>10°C</h3>
+            <p>Rainy</p>
+          </div>
+          <div class="book-weather-icon">
+            <i class="ph-cloud-rain"></i>
+          </div>
+          <div class="book-weather-status">
+            <p class="book-humidity"><i class="ph-drop-half-bottom"></i>17%</p>
+            <p class="book-wind-speed">
+              <i class="weather-icons ph-wind"></i>2.1Km/h
+            </p>
+            <p class="book-rain-chance">
+              <i class="weather-icons ph-cloud-rain"></i>35%
+            </p>
+          </div>
+        </div>
+      --></div>
+    </nav>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
+
+<!--       <div class="greetings">
+          <i class="hand-waving ph-hand-waving"></i>
+          <p>Good morning!</p>
+        </div> -->
