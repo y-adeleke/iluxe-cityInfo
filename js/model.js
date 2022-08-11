@@ -36,7 +36,7 @@ export const loadBrowserLocation = async function () {
 export const loadCityInfo = async function (inputCity, error) {
   try {
     const res = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=4e95fd070598460ebb2110205221306&q=${inputCity}&days=1&aqi=yes&alerts=yes`
+      `https://api.weatherapi.com/v1/forecast.json?key=4e95fd070598460ebb2110205221306&q=${inputCity}&days=1&aqi=yes&alerts=yes`
     );
 
     if (!res.ok) throw new Error(error);
