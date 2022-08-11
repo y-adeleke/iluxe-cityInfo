@@ -128,7 +128,7 @@ export const init = function () {
 
   cityState.bookmarks.forEach(async (a) => {
     const res = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=4e95fd070598460ebb2110205221306&q=${a.location.name}&days=1&aqi=yes&alerts=yes`
+      `https://api.weatherapi.com/v1/forecast.json?key=4e95fd070598460ebb2110205221306&q=${a.location.name}&days=1&aqi=yes&alerts=yes`
     );
 
     if (!res.ok) throw new Error(error);
