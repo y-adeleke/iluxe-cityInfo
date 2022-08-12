@@ -471,6 +471,7 @@
     width: 70%;
     margin-top: 4.8rem;
     margin-bottom: 3rem;
+    margin-left: 15%;
     background-color: transparent;
     justify-self: center;
     display: grid;
@@ -481,6 +482,7 @@
     @media screen and (max-width: 1320px) {
       .main-box .city-info-box {
         width: 90%;
+        margin-left: 5%;
         height: 22rem; } }
     @media screen and (max-width: 1300px) {
       .main-box .city-info-box {
@@ -494,6 +496,8 @@
     @media screen and (max-width: 460px) {
       .main-box .city-info-box {
         width: 80vw;
+        margin-left: 7vw;
+        margin-right: 5vw;
         margin-top: 1rem; } }
     .main-box .city-info-box .image {
       /* box-shadow: 6px -6px 9px transparent, -1px 6px 12px #fff;

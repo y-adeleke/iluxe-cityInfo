@@ -64,19 +64,20 @@ class cityView {
           mainBox.style.visibility = "hidden";
           mainBox.style.animation = "hide .5s";
           favBox.style.visibility = "visible";
+          document.querySelector(".error-display").style.display = "none";
           favBox.style.animation = "moveRight .5s";
         }
       })
     );
 
     closeButton.addEventListener("click", function () {
-      // window.location.reload(true);
       if (window.matchMedia("(min-width: 951px)").matches) {
         favBox.style.visibility = "hidden";
         mainBox.style.gridColumn = "2 / span 6";
         mainBox.style.animation = "moveLeft .5s";
         favBox.style.animation = "moveLeft .7s";
       } else if (window.matchMedia("(max-width: 950px)").matches) {
+        //document.querySelector(".error-display").style.display = "block";
         mainBox.style.visibility = "visible";
         favBox.style.visibility = "hidden";
         favBox.style.animation = "hide .5s";
@@ -228,6 +229,7 @@ class cityView {
       });
     };
     forecastHtml(allForecastContainer);
+    this.mainBox.style.display = "block";
   }
 
   bookmarkRender(data) {

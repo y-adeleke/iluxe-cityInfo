@@ -8,6 +8,7 @@ const bookmarkMarkup = document.querySelector(".bookmark-container");
 const favBox = document.querySelector(".favourite-box");
 
 //Dom mmanipulation
+
 cityview.manipulateDesign();
 
 ///rendering using lon and lat
@@ -22,8 +23,8 @@ const renderLocation = async function () {
 };
 renderLocation();
 
-////searching city
-nextButton.addEventListener("click", async function () {
+//search city function
+const renderCitySerachedFunc = async function () {
   mainBox.innerHTML = "";
   mainBox.style.visibility = "hidden";
   spinner.style.visibility = "visible";
@@ -35,6 +36,20 @@ nextButton.addEventListener("click", async function () {
   );
   document.querySelector(".input").value = "";
   cityview.generateMarkUp(model.cityState.data);
+};
+
+////searching city
+document.addEventListener(
+  "submit",
+  async function (e) {
+    renderCitySerachedFunc();
+    e.preventDefault();
+  },
+  false
+);
+
+nextButton.addEventListener("click", function () {
+  renderCitySerachedFunc();
 });
 
 ///Bookmark functionality

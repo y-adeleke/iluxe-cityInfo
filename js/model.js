@@ -17,6 +17,8 @@ const getPosition = function () {
       navigator.geolocation.getCurrentPosition(resolve, (reject) => {
         errDisplay.style.display = "block";
         errDisplay.textContent = `${reject.message}🧨`;
+        mainBox.style.display = "none";
+
         spinner.style.visibility = "hidden";
       });
     });
