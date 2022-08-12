@@ -14,6 +14,7 @@ window.onload = function () {
     window.location.reload();
   }
 };
+window.location.href = window.location.href;
 //Dom mmanipulation
 cityview.manipulateDesign();
 
