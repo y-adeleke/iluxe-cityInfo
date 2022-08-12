@@ -7,8 +7,14 @@ const errDisplay = document.querySelector(".error-display");
 const bookmarkMarkup = document.querySelector(".bookmark-container");
 const favBox = document.querySelector(".favourite-box");
 
+//refresh page one time
+window.onload = function () {
+  if (!window.location.hash) {
+    window.location = window.location + "#loaded";
+    window.location.reload();
+  }
+};
 //Dom mmanipulation
-
 cityview.manipulateDesign();
 
 ///rendering using lon and lat
