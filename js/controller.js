@@ -7,13 +7,36 @@ const errDisplay = document.querySelector(".error-display");
 const bookmarkMarkup = document.querySelector(".bookmark-container");
 const favBox = document.querySelector(".favourite-box");
 
+(function () {
+  if (window.localStorage) {
+    if (!localStorage.getItem("firstLoad")) {
+      localStorage["firstLoad"] = true;
+      window.location.reload();
+    } else localStorage.removeItem("firstLoad");
+  }
+})();
+
 //refresh page one time
+/*
+function refresh() {
+  var url = location.origin;
+  var pathname = location.pathname;
+  var hash = location.hash;
+
+  location = url + pathname + "?application_refresh=" + hash;
+}
+refresh();
+
+
 window.onload = function () {
   if (!window.location.hash) {
     window.location = window.location + "#loaded";
     window.location.reload();
   }
 };
+window.onload();
+*/
+
 //Dom mmanipulation
 cityview.manipulateDesign();
 

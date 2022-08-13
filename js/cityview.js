@@ -62,6 +62,7 @@ class cityView {
           favBox.style.animation = "moveRight .7s";
         } else if (window.matchMedia("(max-width: 950px)").matches) {
           mainBox.style.visibility = "hidden";
+          document.querySelector(".gyro").style.display = "none";
           mainBox.style.animation = "hide .5s";
           favBox.style.visibility = "visible";
           document.querySelector(".error-display").style.display = "none";

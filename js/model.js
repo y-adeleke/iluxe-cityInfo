@@ -16,16 +16,15 @@ const getPosition = function () {
     return new Promise(function (resolve, reject) {
       navigator.geolocation.getCurrentPosition(resolve, (reject) => {
         errDisplay.style.display = "block";
-        errDisplay.textContent = `${reject.message}🧨`;
+        errDisplay.textContent = `unable to get browser location...search instead🧨`;
         mainBox.style.display = "none";
-
         spinner.style.visibility = "hidden";
       });
     });
   } else {
-    alert(
-      "your browser doesn't support getting your location, search instead."
-    );
+    errDisplay.style.display = "block";
+    errDisplay.textContent =
+      "your browser doesn't support getting your location, search instead.";
   }
 };
 
