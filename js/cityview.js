@@ -62,7 +62,6 @@ class cityView {
           favBox.style.animation = "moveRight .7s";
         } else if (window.matchMedia("(max-width: 950px)").matches) {
           mainBox.style.visibility = "hidden";
-          document.querySelector(".gyro").style.display = "none";
           mainBox.style.animation = "hide .5s";
           favBox.style.visibility = "visible";
           document.querySelector(".error-display").style.display = "none";
@@ -78,7 +77,6 @@ class cityView {
         mainBox.style.animation = "moveLeft .5s";
         favBox.style.animation = "moveLeft .7s";
       } else if (window.matchMedia("(max-width: 950px)").matches) {
-        //document.querySelector(".error-display").style.display = "block";
         mainBox.style.visibility = "visible";
         favBox.style.visibility = "hidden";
         favBox.style.animation = "hide .5s";

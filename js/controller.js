@@ -7,6 +7,7 @@ const errDisplay = document.querySelector(".error-display");
 const bookmarkMarkup = document.querySelector(".bookmark-container");
 const favBox = document.querySelector(".favourite-box");
 
+//refresh page once
 (function () {
   if (window.localStorage) {
     if (!localStorage.getItem("firstLoad")) {
@@ -39,7 +40,6 @@ window.onload();
 
 //Dom mmanipulation
 cityview.manipulateDesign();
-
 ///rendering using lon and lat
 const renderLocation = async function () {
   await model.loadCityInfo(

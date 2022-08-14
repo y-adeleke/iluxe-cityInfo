@@ -16,7 +16,8 @@ const getPosition = function () {
     return new Promise(function (resolve, reject) {
       navigator.geolocation.getCurrentPosition(resolve, (reject) => {
         errDisplay.style.display = "block";
-        errDisplay.textContent = `unable to get browser location...search instead🧨`;
+        errDisplay.textContent = `location unavailable, search instead🧨`;
+        errDisplay.style.fontSize = `14px`;
         mainBox.style.display = "none";
         spinner.style.visibility = "hidden";
       });
