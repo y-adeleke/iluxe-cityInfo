@@ -25,24 +25,39 @@ class cityView {
       pCon.textContent = `${extConvert} ${numFig}`;
     };
 
-    if (peopleLengthStr < 13 && peopleLengthStr === 12) {
-      popFactMini(0, 3, "B");
-    } else if (peopleLengthStr < 13 && peopleLengthStr === 11) {
-      popFactMini(0, 2, "B");
-    } else if (peopleLengthStr < 13 && peopleLengthStr === 10) {
-      popFactMini(0, 1, "B");
-    } else if (peopleLengthStr < 13 && peopleLengthStr === 9) {
-      popFactMini(0, 3, "M");
-    } else if (peopleLengthStr < 13 && peopleLengthStr === 8) {
-      popFactMini(0, 2, "M");
-    } else if (peopleLengthStr < 13 && peopleLengthStr === 7) {
-      popFactMini(0, 1, "M");
-    } else if (peopleLengthStr < 13 && peopleLengthStr === 6) {
-      popFactMini(0, 3, "K");
-    } else if (peopleLengthStr < 13 && peopleLengthStr === 5) {
-      popFactMini(0, 2, "K");
-    } else if (peopleLengthStr < 13 && peopleLengthStr === 4) {
-      popFactMini(0, 1, "K");
+    if (peopleLengthStr < 13) {
+      switch (peopleLengthStr) {
+        case 12:
+          popFactMini(0, 3, "B");
+          break;
+        case 11:
+          popFactMini(0, 2, "B");
+          break;
+        case 10:
+          popFactMini(0, 1, "B");
+          break;
+        case 9:
+          popFactMini(0, 3, "M");
+          break;
+        case 8:
+          popFactMini(0, 2, "M");
+          break;
+        case 7:
+          popFactMini(0, 1, "M");
+          break;
+        case 6:
+          popFactMini(0, 3, "K");
+          break;
+        case 5:
+          popFactMini(0, 2, "K");
+          break;
+        case 4:
+          popFactMini(0, 1, "K");
+          break;
+        default:
+          // Handle the default case here
+          break;
+      }
     }
   }
   manipulateDesign() {
@@ -96,27 +111,16 @@ class cityView {
   generateMarkUp(data) {
     this.markup.innerHTML = "";
     let hourExtContainer = [];
-    hourExtContainer = data.forecast.forecastday[0].hour.map((a) =>
-      a.time.slice(11)
-    );
+    hourExtContainer = data.forecast.forecastday[0].hour.map((a) => a.time.slice(11));
     // Extracting Forecast Icon
     let iconContainer = [];
-    iconContainer = data.forecast.forecastday[0].hour.map(
-      (a) => a.condition.icon
-    );
+    iconContainer = data.forecast.forecastday[0].hour.map((a) => a.condition.icon);
     //Extracting weather degree
-    let weatherForecastContsiner = data.forecast.forecastday[0].hour.map((a) =>
-      a.temp_c.toFixed(0)
-    );
-    const allForecastContainer = [
-      hourExtContainer,
-      iconContainer,
-      weatherForecastContsiner,
-    ];
+    let weatherForecastContsiner = data.forecast.forecastday[0].hour.map((a) => a.temp_c.toFixed(0));
+    const allForecastContainer = [hourExtContainer, iconContainer, weatherForecastContsiner];
     //////
 
-    let [currencies, flag, languages, nativeName, population, accWeather] =
-      data.countryInfo;
+    let [currencies, flag, languages, nativeName, population, accWeather] = data.countryInfo;
     const weatherCelcius = accWeather - 273.15;
     const populationFacStr = population.toString();
     //inserting html
@@ -125,58 +129,42 @@ class cityView {
   <div class="location-weather">
     <div class="city-name">
       <div class="name-box">
-        <ion-icon name="location-outline"></ion-icon><span class="city">${
-          data.location.name
-        }</span>
+        <ion-icon name="location-outline"></ion-icon><span class="city">${data.location.name}</span>
       </div>
-      <ion-icon class="add-bookmark" name="bookmark${
-        data.bookmarked === true ? "" : "-outline"
-      }"></ion-icon>
+      <ion-icon class="add-bookmark" name="bookmark${data.bookmarked === true ? "" : "-outline"}"></ion-icon>
     </div>
     <div class="weather-degree">
     <img
-    class ="weather-icon-deg" src="${
-      data.current.condition.icon
-    }" alt=""/>${weatherCelcius.toFixed()}<span>℃</span>
+    class ="weather-icon-deg" src="${data.current.condition.icon}" alt=""/>${weatherCelcius.toFixed()}<span>℃</span>
     </div>
     <div class="weather-status">${data.current.condition.text}</div>
     <div class="date-fig">
       ${data.location.localtime.slice(0, 10)} <span class="time-clock">${
-      data.location.localtime.slice(11).length === 4
-        ? "0" + data.location.localtime.slice(11)
-        : data.location.localtime.slice(11)
+      data.location.localtime.slice(11).length === 4 ? "0" + data.location.localtime.slice(11) : data.location.localtime.slice(11)
     }</span><span class="manual-time-clock"></span>
        <span class="date-status"></span>
     </div>
   </div>
 
   <div class="weather-favorite">
-  <ion-icon class="add-bookmark" name="bookmark${
-    data.bookmarked === true ? "" : "-outline"
-  }"></ion-icon>
+  <ion-icon class="add-bookmark" name="bookmark${data.bookmarked === true ? "" : "-outline"}"></ion-icon>
     <div class="humidity">
       <i class="weather-icons ph-drop-half-bottom"
         ><span class="icon-gap">Humidity</span></i
       >
-      <span class="weather-digit humidity-percentage">${
-        data.current.humidity
-      }<span>%</span></span>
+      <span class="weather-digit humidity-percentage">${data.current.humidity}<span>%</span></span>
     </div>
 
     <div class="wind-speed">
       <i class="weather-icons ph-wind"
         ><span class="icon-gap">wind speed</span></i
-      ><span class="weather-digit wind-speed-percentage">${
-        data.current.wind_kph
-      }<span>kph</span></span>
+      ><span class="weather-digit wind-speed-percentage">${data.current.wind_kph}<span>kph</span></span>
     </div>
     <div class="rain-chance">
       <i class="weather-icons ph-cloud-rain"
         ><span class="icon-gap">chances of rain</span></i
       >
-      <span class="weather-digit rain-percentage">${
-        data.forecast.forecastday[0].day.daily_chance_of_rain
-      }<span>%</span></span>
+      <span class="weather-digit rain-percentage">${data.forecast.forecastday[0].day.daily_chance_of_rain}<span>%</span></span>
     </div>
   </div>
 </div>
@@ -185,9 +173,7 @@ class cityView {
 <div class="image"></div>
 <div class="country-info">
   <div><span class="info-title"></span>${nativeName}</div>
-  <div class="cur"><span class="cur-icon">💰 </span>${
-    currencies[0].code
-  } <span class="symbol">${currencies[0].symbol}</span></div>
+  <div class="cur"><span class="cur-icon">💰 </span>${currencies[0].code} <span class="symbol">${currencies[0].symbol}</span></div>
   <div><span class="info-title"> 🗣</span>${languages[0].name}</div>
   <div><span class="info-title">👫</span> <span class="pop-people">13.4m</span> people</div>
 </div>
@@ -212,19 +198,12 @@ class cityView {
         const getIcons = icons[index];
         const getDeg = weather[index];
         const html = `<div class="forecast-single-con">
-        <p class="time">${
-          document.querySelector(".time-clock").innerHTML.slice(0, 2) ===
-          hour.slice(0, 2)
-            ? "NOW"
-            : hour
-        }</p>
+        <p class="time">${document.querySelector(".time-clock").innerHTML.slice(0, 2) === hour.slice(0, 2) ? "NOW" : hour}</p>
         <img src="${getIcons}" alt=""/>
         <p class="deg">${getDeg} <span>℃</span></p>
       </div>
       </div>`;
-        document
-          .querySelector(".forecast")
-          .insertAdjacentHTML("beforeend", html);
+        document.querySelector(".forecast").insertAdjacentHTML("beforeend", html);
       });
     };
     forecastHtml(allForecastContainer);
@@ -247,16 +226,12 @@ class cityView {
       class ="weather-icon-deg" src="${a.current.condition.icon}" alt=""/>
       </div>
       <div class="book-weather-status">
-        <p class="book-humidity"><i class="ph-drop-half-bottom"></i>${
-          a.current.humidity
-        }%</p>
+        <p class="book-humidity"><i class="ph-drop-half-bottom"></i>${a.current.humidity}%</p>
         <p class="book-wind-speed">
           <i class="weather-icons ph-wind"></i>${a.current.wind_kph}Km/h
         </p>
         <p class="book-rain-chance">
-          <i class="weather-icons ph-cloud-rain"></i>${
-            a.forecast.forecastday[0].day.daily_chance_of_rain
-          }%
+          <i class="weather-icons ph-cloud-rain"></i>${a.forecast.forecastday[0].day.daily_chance_of_rain}%
         </p>
       </div>
     </div>`;
