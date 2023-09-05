@@ -1,3 +1,8 @@
+#scss
+*.scss
+
+# Exclude CSS map files
+*.css.map
 
 sass
 node_modules

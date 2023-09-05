@@ -17,35 +17,11 @@ const favBox = document.querySelector(".favourite-box");
   }
 })();
 
-//refresh page one time
-/*
-function refresh() {
-  var url = location.origin;
-  var pathname = location.pathname;
-  var hash = location.hash;
-
-  location = url + pathname + "?application_refresh=" + hash;
-}
-refresh();
-
-
-window.onload = function () {
-  if (!window.location.hash) {
-    window.location = window.location + "#loaded";
-    window.location.reload();
-  }
-};
-window.onload();
-*/
-
 //Dom mmanipulation
 cityview.manipulateDesign();
 ///rendering using lon and lat
 const renderLocation = async function () {
-  await model.loadCityInfo(
-    await model.loadBrowserLocation(),
-    "unable to get your browser location🧨"
-  );
+  await model.loadCityInfo(await model.loadBrowserLocation(), "unable to get your browser location🧨");
   cityview.generateMarkUp(model.cityState.data);
   const noBookmark = document.querySelectorAll(".add-bookmark");
   noBookmark.forEach((a) => (a.style.display = "none"));
@@ -59,10 +35,7 @@ const renderCitySerachedFunc = async function () {
   spinner.style.visibility = "visible";
   errDisplay.style.display = "none";
   const inputCity = document.querySelector(".input").value.toLowerCase();
-  await model.loadCityInfo(
-    inputCity,
-    "this city does not exist, input a valid city🧨"
-  );
+  await model.loadCityInfo(inputCity, "this city does not exist, input a valid city🧨");
   document.querySelector(".input").value = "";
   cityview.generateMarkUp(model.cityState.data);
 };
@@ -96,8 +69,7 @@ const controlAddBookmark = function () {
   cityview.bookmarkRender(model.cityState.bookmarks);
 
   //Displaying no bookmark yet
-  if (model.cityState.bookmarks.length === 0)
-    document.querySelector(".bookmark-error").innerHTML = "No bookmark yet!";
+  if (model.cityState.bookmarks.length === 0) document.querySelector(".bookmark-error").innerHTML = "No bookmark yet!";
 };
 
 cityview.addHandlerAddBookmark(controlAddBookmark);
@@ -109,13 +81,8 @@ bookmarkMarkup.addEventListener("click", async function (e) {
   const bookmarkCity = btn.children[0].children[0].innerHTML;
   spinner.style.visibility = "visible";
   mainBox.style.visibility = "hidden";
-  window.matchMedia("(max-width: 950px)").matches
-    ? (favBox.style.visibility = "hidden")
-    : (favBox.style.visibility = "visible");
-  await model.loadCityInfo(
-    bookmarkCity,
-    "this city does not exist, input a valid city🧨"
-  );
+  window.matchMedia("(max-width: 950px)").matches ? (favBox.style.visibility = "hidden") : (favBox.style.visibility = "visible");
+  await model.loadCityInfo(bookmarkCity, "this city does not exist, input a valid city🧨");
   cityview.generateMarkUp(model.cityState.data);
   spinner.style.visibility = "hidden";
 });
